@@ -8,8 +8,19 @@
 
 import UIKit
 
-class TrendingViewController: UIViewController {
+class TrendingViewController: ViewController {
 
+    var thisPresentationMode = ViewPresentation.Normal
+    
+    override var presentationMode: ViewPresentation {
+        get {
+            return thisPresentationMode
+        }
+        set {
+            thisPresentationMode = newValue as ViewPresentation
+        }
+    }
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var feedView: UIImageView!

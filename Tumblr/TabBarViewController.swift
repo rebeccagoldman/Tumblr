@@ -8,21 +8,24 @@
 
 import UIKit
 
-class TabBarViewController: UIViewController {
+class TabBarViewController: ViewController {
 
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet var superView: UIView!
+
     var homeViewController: UIViewController!
     var searchViewController: UIViewController!
     var composeViewController: UIViewController!
     var accountViewController: UIViewController!
     var trendingViewController: UIViewController!
 
+    @IBOutlet weak var explorePopupView: UIImageView!
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var trendingButton: UIButton!
-
+    @IBOutlet weak var composeButton: UIButton!
     var selectedTabButton: UIButton!
     var selectedViewController: UIViewController!
     
@@ -34,24 +37,30 @@ class TabBarViewController: UIViewController {
         
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! UIViewController
-        searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as! UIViewController
-        composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as! UIViewController
-        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as! UIViewController
-        trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as! UIViewController
+        homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeView") as! UIViewController
+        searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchView") as! UIViewController
+        composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeView") as! UIViewController
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountView") as! UIViewController
+        trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingView") as! UIViewController
         
-        buttons = [homeButton, searchButton, accountButton, trendingButton]
-        viewControllers = [homeViewController, searchViewController, accountViewController, trendingViewController]
+        buttons = [homeButton, searchButton, composeButton, accountButton, trendingButton]
+        viewControllers = [homeViewController, searchViewController, composeViewController, accountViewController, trendingViewController]
         
         homeViewController.view.frame = contentView.bounds
         contentView.addSubview(homeViewController.view)
         
         selectedTabButton = homeButton
         homeButton.selected = true
+        
+//        explorePopupView.hidden = false
+        
+        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: {
+            self.explorePopupView.transform = CGAffineTransformMakeTranslation(0, -5)
+            }, completion: nil)
 
-        
     }
-        
+
+    
     func loadContentView(ViewController: UIViewController) {
         addChildViewController(ViewController)
         ViewController.view.frame = contentView.bounds
@@ -67,7 +76,7 @@ class TabBarViewController: UIViewController {
         accountButton.selected = false
         trendingButton.selected = false
         
-        for(var i = 0; i < 4; i++){
+        for(var i = 0; i < 5; i++){
 
             if (tabButton.tag == i) {
 
@@ -79,22 +88,16 @@ class TabBarViewController: UIViewController {
             }
         }
         
-        
+        if tabButton.tag == 1 || tabButton.tag == 2  {
+            explorePopupView.hidden = true
+        } else {
+            explorePopupView.hidden = false
+        }
         
     }
-
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     
     @IBAction func didPressHome(sender: AnyObject) {
-
-//        resetTabBar()
 
         didTouchTabButton(homeButton)
         loadContentView(homeViewController)
@@ -104,8 +107,6 @@ class TabBarViewController: UIViewController {
     
     @IBAction func didPressSearch(sender: AnyObject) {
 
-//        resetTabBar()
-
         didTouchTabButton(searchButton)
         loadContentView(searchViewController)
         
@@ -113,7 +114,6 @@ class TabBarViewController: UIViewController {
     
     
     @IBAction func didPressProfile(sender: AnyObject) {
-//        resetTabBar()
 
         didTouchTabButton(accountButton)
         loadContentView(accountViewController)
@@ -122,25 +122,27 @@ class TabBarViewController: UIViewController {
     
     
     @IBAction func didPressTrending(sender: AnyObject) {
-//        resetTabBar()
 
         didTouchTabButton(trendingButton)
         loadContentView(trendingViewController)
         
     }
-    
-    
+
     @IBAction func didPressCompose(sender: AnyObject) {
         
-        addChildViewController(composeViewController)
-        composeViewController.view.frame = contentView.bounds
-        view.addSubview(composeViewController.view)
+        didTouchTabButton(composeButton)
+        superView.addSubview(composeViewController.view)
+        composeViewController.view.frame = superView.bounds
+
         
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.composeViewController.view.alpha = 1
-            }) { (Bool) -> Void in
-                self.composeViewController.didMoveToParentViewController(self)
-        
-        }
     }
+    
+    
+  
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
 }

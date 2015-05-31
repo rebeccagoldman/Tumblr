@@ -1,27 +1,14 @@
-
-
 //
-//  SearchViewController.swift
+//  ComposeTransition.swift
 //  Tumblr
 //
-//  Created by Rebecca Goldman on 5/28/15.
+//  Created by Rebecca Goldman on 5/31/15.
 //  Copyright (c) 2015 codepath. All rights reserved.
 //
 
 import UIKit
 
-class SearchViewController: ViewController {
-    
-    var thisPresentationMode = ViewPresentation.Normal
-    
-    override var presentationMode: ViewPresentation {
-        get {
-            return thisPresentationMode
-        }
-        set {
-            thisPresentationMode = newValue as ViewPresentation
-        }
-    }
+class ComposeTransition: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

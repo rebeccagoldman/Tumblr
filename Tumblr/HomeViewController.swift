@@ -8,8 +8,19 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: ViewController {
 
+    var thisPresentationMode = ViewPresentation.Normal
+    
+    override var presentationMode: ViewPresentation {
+        get {
+            return thisPresentationMode
+        }
+        set {
+            thisPresentationMode = newValue as ViewPresentation
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

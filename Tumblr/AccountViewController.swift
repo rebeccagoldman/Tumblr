@@ -8,8 +8,18 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountViewController: ViewController {
 
+    var thisPresentationMode = ViewPresentation.Modal
+    
+    override var presentationMode: ViewPresentation {
+        get {
+            return thisPresentationMode
+        }
+        set {
+            thisPresentationMode = newValue as ViewPresentation
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
