@@ -64,6 +64,9 @@
                                         <state key="normal" image="compose_button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didPressCompose:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bVN-f7-x3d"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nz4-xI-Rl9">
                                         <rect key="frame" x="15" y="9" width="35" height="35"/>

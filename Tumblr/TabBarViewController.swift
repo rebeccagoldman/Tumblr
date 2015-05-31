@@ -41,20 +41,17 @@ class TabBarViewController: UIViewController {
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as! UIViewController
         
         buttons = [homeButton, searchButton, accountButton, trendingButton]
-        viewControllers = [homeViewController, searchViewController, composeViewController, accountViewController, trendingViewController]
+        viewControllers = [homeViewController, searchViewController, accountViewController, trendingViewController]
         
         homeViewController.view.frame = contentView.bounds
         contentView.addSubview(homeViewController.view)
         
         selectedTabButton = homeButton
         homeButton.selected = true
-    
 
         
     }
-    
-
-    
+        
     func loadContentView(ViewController: UIViewController) {
         addChildViewController(ViewController)
         ViewController.view.frame = contentView.bounds
@@ -72,7 +69,6 @@ class TabBarViewController: UIViewController {
         
         for(var i = 0; i < 4; i++){
 
-
             if (tabButton.tag == i) {
 
                 selectedTabButton = buttons[i]
@@ -82,7 +78,6 @@ class TabBarViewController: UIViewController {
                 
             }
         }
-        
         
         
         
