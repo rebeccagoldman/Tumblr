@@ -2,10 +2,9 @@
 //  ComposeViewController.swift
 //  Tumblr
 //
-//  Created by Rebecca Goldman on 5/28/15.
-//  Copyright (c) 2015 codepath. All rights reserved.
-//
-// adapted from Dan Eden's code for this section
+//  Created by Daniel Eden on 9/6/14.
+//  Copyright (c) 2014 Daniel Eden. All rights reserved.
+
 
 import UIKit
 
