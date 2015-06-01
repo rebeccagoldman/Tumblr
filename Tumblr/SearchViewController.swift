@@ -9,8 +9,12 @@
 //
 
 import UIKit
+import Foundation
 
 class SearchViewController: ViewController {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var backgroundView: UIView!
     
     var thisPresentationMode = ViewPresentation.Normal
     
@@ -25,8 +29,26 @@ class SearchViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backgroundView.alpha = 1
+        
+        var images = UIImage.animatedImageNamed("loading-", duration: 0.5)
+        imageView.image = images
+        
+        delay(0.8, { () -> () in
+            
+            self.imageView.stopAnimating()
+            self.imageView.hidden = true
 
-        // Do any additional setup after loading the view.
+
+        })
+        
+       UIView.animateWithDuration(0.4, delay: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+
+        self.backgroundView.alpha = 0
+       }, completion: nil)
+ 
+        
     }
 
     override func didReceiveMemoryWarning() {

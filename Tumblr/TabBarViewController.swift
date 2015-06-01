@@ -71,10 +71,12 @@ class TabBarViewController: ViewController {
     
     @IBAction func didTouchTabButton(tabButton: UIButton) {
         
+        if tabButton.tag != 2 {
         homeButton.selected = false
         searchButton.selected = false
         accountButton.selected = false
         trendingButton.selected = false
+        }
         
         for(var i = 0; i < 5; i++){
 
@@ -88,7 +90,7 @@ class TabBarViewController: ViewController {
             }
         }
         
-        if tabButton.tag == 1 || tabButton.tag == 2  {
+        if tabButton.tag == 1  {
             explorePopupView.hidden = true
         } else {
             explorePopupView.hidden = false

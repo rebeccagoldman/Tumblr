@@ -20,6 +20,7 @@
 		6B33F0431B17FC36002DF2E2 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B33F0421B17FC36002DF2E2 /* ComposeViewController.swift */; };
 		6B33F0451B17FC3F002DF2E2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B33F0441B17FC3F002DF2E2 /* AccountViewController.swift */; };
 		6B33F0471B17FC4E002DF2E2 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B33F0461B17FC4E002DF2E2 /* TrendingViewController.swift */; };
+		6BEA9C381B1BEB420028443A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEA9C371B1BEB420028443A /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		6B33F0421B17FC36002DF2E2 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		6B33F0441B17FC3F002DF2E2 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		6B33F0461B17FC4E002DF2E2 /* TrendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
+		6BEA9C371B1BEB420028443A /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = ../../../../Downloads/Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				6B33F0421B17FC36002DF2E2 /* ComposeViewController.swift */,
 				6B33F0441B17FC3F002DF2E2 /* AccountViewController.swift */,
 				6B33F0461B17FC4E002DF2E2 /* TrendingViewController.swift */,
+				6BEA9C371B1BEB420028443A /* Common.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				6B33F03D1B17FC12002DF2E2 /* TabBarViewController.swift in Sources */,
 				6B33F0431B17FC36002DF2E2 /* ComposeViewController.swift in Sources */,
 				6B33F01D1B17FB7B002DF2E2 /* AppDelegate.swift in Sources */,
+				6BEA9C381B1BEB420028443A /* Common.swift in Sources */,
 				6B33F03F1B17FC20002DF2E2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
