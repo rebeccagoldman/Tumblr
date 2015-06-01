@@ -121,9 +121,60 @@
                                 <rect key="frame" x="0.0" y="294" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TeH-j5-INm">
+                                <rect key="frame" x="253" y="20" width="67" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressLogin:" destination="uEb-5J-s77" eventType="touchUpInside" id="dOA-cX-X8B"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" id="bdj-FA-5n2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="11D-za-MND" userLabel="loginView">
+                                        <rect key="frame" x="10" y="132" width="300" height="132"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="login_form" id="DnJ-UQ-Mn4">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="132"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" clearsOnBeginEditing="YES" minimumFontSize="17" id="tJK-vz-l56">
+                                                <rect key="frame" x="12" y="8" width="280" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QOq-dR-W5z">
+                                                <rect key="frame" x="8" y="85" width="138" height="47"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didPressCancel:" destination="uEb-5J-s77" eventType="touchUpInside" id="0ga-xd-6sG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.25882352941176467" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="QOq-dR-W5z" id="I75-Ly-6In"/>
+                        <outlet property="emailField" destination="tJK-vz-l56" id="8Au-DW-SLD"/>
+                        <outlet property="loginBackgroundView" destination="bdj-FA-5n2" id="di6-nW-NRh"/>
+                        <outlet property="loginView" destination="11D-za-MND" id="cA2-ZB-pfS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhH-MR-HH2" sceneMemberID="firstResponder"/>
             </objects>
@@ -292,6 +343,7 @@
         <image name="home_overlay" width="320" height="100"/>
         <image name="home_selected_icon" width="35" height="35"/>
         <image name="link_icon" width="75" height="95"/>
+        <image name="login_form" width="300" height="132"/>
         <image name="photo_icon" width="75" height="95"/>
         <image name="quote_icon" width="75" height="96"/>
         <image name="search_feed" width="320" height="524"/>

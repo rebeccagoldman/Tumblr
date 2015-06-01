@@ -10,6 +10,12 @@ import UIKit
 
 class HomeViewController: ViewController {
 
+    @IBOutlet weak var loginBackgroundView: UIView!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var loginView: UIView!
+    
+    @IBOutlet weak var emailField: UITextField!
+    
     var thisPresentationMode = ViewPresentation.Normal
     
     override var presentationMode: ViewPresentation {
@@ -23,6 +29,10 @@ class HomeViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginBackgroundView.alpha = 0
+        loginView.center.y = 600
+        emailField.isFirstResponder()
+
 
         // Do any additional setup after loading the view.
     }
@@ -30,6 +40,33 @@ class HomeViewController: ViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func didPressLogin(sender: AnyObject) {
+        
+        emailField.becomeFirstResponder()
+        
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.loginBackgroundView.alpha = 0.96
+            self.loginView.center.y -= 450
+            
+            
+        }, completion: nil)
+        
+    }
+    
+    
+    @IBAction func didPressCancel(sender: AnyObject) {
+        emailField.resignFirstResponder()
+
+
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.loginBackgroundView.alpha = 0
+            self.loginView.center.y += 450
+            
+            
+            }, completion: nil)
+        
     }
     
 
